@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dicoding.myeventapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="EVENT_ID"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    />
+
+    <fragment
+        android:id="@+id/nav_upcoming"
+        android:name="com.dicoding.myeventapp.ui.upcoming.UpcomingFragment"
+        android:label="@string/title_upcoming"
+        tools:layout="@layout/fragment_upcoming" >
+        <action
+            android:id="@+id/action_upcomingFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="EVENT_ID"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    />
+
+    <fragment
+        android:id="@+id/nav_finish"
+        android:name="com.dicoding.myeventapp.ui.finish.FinishFragment"
+        android:label="@string/title_finish"
+        tools:layout="@layout/fragment_finish">
+        <action
+            android:id="@+id/action_finishFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="EVENT_ID"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    />
+
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.dicoding.myeventapp.ui.detail.DetailFragment"
+        android:label="Detail Fragment">
+        <argument
+            android:name="EVENT_ID"
+            app:argType="integer" />
+    </fragment>
+</navigation>
